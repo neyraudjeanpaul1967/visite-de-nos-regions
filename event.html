@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styleE.css" />
+    <title>visite de nos regions</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./logo.png" alt="Logo Visite de nos Régions">
+            <h1>Visite de nos Régions — Explorez la France, de ses villages pittoresques à ses lieux emblématiques.</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html" >page d'accueil</a></li>
+                <li><a href="./login.html">inscription visiteurs</a></li>
+                <li><a href="./loginguide.html">inscription guides</a></li>
+                <li><a href="./event.html" class="active">commandes</a></li>
+                <li id="authButton">
+                    <a href="#" class="auth-btn">Se connecter</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Réservation de visite</h2>
+            <form id="commandeForm">
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input type="text" id="ville" name="ville" required>
+                </div>
+                <div class="form-group">
+                    <label for="lieu">Lieu</label>
+                    <input type="text" id="lieu" name="lieu" required>
+                </div>
+                <div class="form-group">
+                    <label for="monument">Monument</label>
+                    <input type="text" id="monument" name="monument" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nbPersonnes">Nombre de personnes</label>
+                    <input type="number" id="nbPersonnes" name="nbPersonnes" min="1" required>
+                </div>
+                <div class="form-group">
+                <label for="guideSelect">Guide</label>
+                <select id="guideSelect" name="guideSelect" required>
+                <option disabled selected>Chargement des guides...</option>
+                </select>
+</div>
+                <div class="form-group">
+                    <label for="prixPersonne">Prix par personne (€)</label>
+                    <input type="number" id="prixPersonne" name="prixPersonne" min="0" step="0.01" required readonly>
+                </div>
+                <div class="form-group total-price">
+                    <label for="prixTotal">Prix total (€)</label>
+                    <input type="number" id="prixTotal" name="prixTotal" readonly>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-connect">Réserver</button>
+                    <button type="button" class="btn-disconnect">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="mentions-legales">
+                <h3>Mentions légales</h3>
+                <p>© 2025 Visite de nos Régions. Tous droits réservés.</p>
+            </div>
+            <div class="about">
+                <h3>À propos</h3>
+                <p>Site créé par Jean-Paul</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/event.js"></script>
+</body>
+</html>

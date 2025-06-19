@@ -1,0 +1,287 @@
+/* Variables globales */
+:root {
+  --primary-color: #00a699;
+  --secondary-color: #ff9900;
+  --text-color: #333;
+  --background-color: #f8f9fa; /* Fond neutre */
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --gray-light: #e9ecef; /* Gris clair pour contraste */
+  --border-color: #ddd;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 10px; /* Bordures arrondies */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+}
+
+/* Header */
+header {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo-container img {
+  height: 120px;
+  border-radius: 10px;
+}
+
+.logo-container h1 {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.8rem 1.2rem;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: white;
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a.active {
+  color: white;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  /* Ajout des propriétés pour maintenir le style actif */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire */
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--gray-light);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 166, 153, 0.2);
+}
+
+/* Dans styleE.css */
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--gray-light);
+  cursor: pointer;
+}
+
+
+/* Prix total */
+.total-price {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  margin-top: 2rem;
+}
+
+.total-price label {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.total-price input {
+  background-color: transparent;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Boutons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-connect {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-disconnect {
+  background-color: var(--error-color);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles pour le bouton d'authentification */
+.auth-btn {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+}
+
+.auth-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.auth-btn.logged-in {
+    background-color: var(--error-color) !important;
+}
+
+#authButton {
+    margin-left: auto;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav ul li a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  nav ul li a {
+    width: 100%;
+    text-align: center;
+  }
+
+  #authButton {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .auth-btn {
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styleI.css" />
+    <title>visite de nos regions</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="./logo.png" alt="Logo Visite de nos Régions" />
+        <h1>
+          Visite de nos Régions — Explorez la France, de ses villages
+          pittoresques à ses lieux emblématiques.
+        </h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active">page d'accueil</a></li>
+          <li><a href="./login.html">inscription visiteurs</a></li>
+          <li><a href="./loginguide.html">inscription guides</a></li>
+          <li><a href="./event.html">commandes</a></li>
+          <li id="authButton">
+            <a href="#" class="auth-btn">Se connecter</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="search-container">
+        <div class="search-bar">
+          <form id="searchForm">
+            <input
+              type="text"
+              id="recherches"
+              placeholder="Rechercher une ville"
+              required
+            />
+            <button type="submit">Rechercher</button>
+            <button type="button" id="validateBtn" class="validate-btn">Valider</button>
+          </form>
+        </div>
+
+        <div class="search-fields">
+          <input type="text" placeholder="ville" class="full-width" readonly />
+          <input
+            type="text"
+            placeholder="monument ou centre historique"
+            class="full-width"
+          />
+        </div>
+
+        <div id="results" class="results-container"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="mentions-legales">
+          <h3>Mentions légales</h3>
+          <p>© 2025 Visite de nos Régions. Tous droits réservés.</p>
+        </div>
+        <div class="about">
+          <h3>À propos</h3>
+          <p>Site créé par Jean-Paul</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/api-monuments.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
