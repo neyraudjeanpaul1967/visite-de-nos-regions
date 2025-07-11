@@ -1,0 +1,270 @@
+/* ===================== */
+/* MOBILE FIRST (téléphone) */
+/* ===================== */
+:root {
+  --primary-color: #00a699;
+  --secondary-color: #ff9900;
+  --text-color: #222;
+  --background-color: #f8f9fa;
+  --border-color: #ddd;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.logo-container img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.logo-container h1 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
+}
+
+nav {
+  position: relative;
+}
+
+nav .burger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: -7rem;
+  z-index: 200;
+}
+
+nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 3.2rem;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border-color);
+  list-style: none;
+}
+
+nav ul.show {
+  display: flex;
+}
+
+nav ul li {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav ul li:last-child {
+  border-bottom: none;
+}
+
+nav ul li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1rem;
+  background: #fff;
+  font-size: 1.1rem;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.search-container {
+  max-width: 98vw;
+  margin: 1.5rem auto;
+  padding: 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.search-bar {
+  margin-bottom: 1.2rem;
+}
+
+#searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+#searchForm input,
+#searchForm button {
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+#searchForm button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#searchForm button:hover {
+  opacity: 0.9;
+}
+
+.search-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.full-width {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #f1f1f1;
+  font-size: 1rem;
+}
+
+.results-container {
+  margin-top: 1.2rem;
+}
+
+.footer-content {
+  text-align: center;
+  padding: 1rem 0;
+  background: #f1f1f1;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.mentions-legales,
+.about {
+  margin-bottom: 1rem;
+}
+
+.mentions-legales h3,
+.about h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* ===================== */
+/* TABLETTE (min 768px)  */
+/* ===================== */
+@media (min-width: 768px) {
+  .logo-container h1 {
+    font-size: 1.3rem;
+  }
+  .search-container {
+    max-width: 600px;
+    padding: 2rem;
+  }
+  .footer-content {
+    font-size: 1.1rem;
+  }
+  nav ul {
+    width: 60vw;
+    left: 20vw;
+    top: 3.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* ===================== */
+/* ORDINATEUR (min 1025px) */
+/* ===================== */
+@media (min-width: 1025px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  nav .burger {
+    display: none;
+  }
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    border: none;
+    width: auto;
+    gap: 2rem;
+    box-shadow: none;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+  }
+  nav ul li {
+    border-bottom: none;
+    width: auto;
+  }
+  nav ul li a {
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    text-align: center;
+    background: none;
+    color: var(--text-color);
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .search-container {
+    max-width: 900px;
+    padding: 2.5rem;
+  }
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .mentions-legales,
+  .about {
+    margin-bottom: 0;
+  }
+}

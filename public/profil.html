@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profil - Visite de nos Régions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleP.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo Visite de nos Régions" />
+        <h1>
+          Visite de nos Régions — Explorez la France, de ses villages
+          pittoresques à ses lieux emblématiques.
+        </h1>
+      </div>
+      <nav>
+        <button class="burger" aria-label="Menu">&#9776;</button>
+        <ul>
+          <li><a href="./index.html">page d'accueil</a></li>
+          <li><a href="./login.html">inscription visiteurs</a></li>
+          <li><a href="./loginguide.html">inscription guides</a></li>
+          <li><a href="./event.html">commandes</a></li>
+          <li><a href="./commentaire.html">commentaires</a></li>
+          <li><a href="./profil.html" class="active">profil</a></li>
+          <li id="authButton">
+            <a href="#" class="auth-btn">Se connecter</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Section de connexion -->
+      <div id="loginSection" class="form-container">
+        <h2>Connexion</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Mot de passe</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              required
+            />
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn-connect">Se connecter</button>
+          </div>
+          <p id="loginMessage"></p>
+        </form>
+      </div>
+
+      <!-- Section profil (cachée par défaut) -->
+      <div id="profilSection" class="form-container" style="display: none">
+        <h2>Mon Profil</h2>
+        <div class="profil-info">
+          <div class="profil-header">
+            <div class="profil-avatar">
+              <span id="avatarInitials">?</span>
+            </div>
+            <div class="profil-title">
+              <h3 id="profilNomComplet">Nom Complet</h3>
+              <p id="profilType">Visiteur</p>
+            </div>
+          </div>
+
+          <div class="profil-details">
+            <div class="info-group">
+              <label>Nom :</label>
+              <span id="profilNom">-</span>
+            </div>
+            <div class="info-group">
+              <label>Prénom :</label>
+              <span id="profilPrenom">-</span>
+            </div>
+            <div class="info-group">
+              <label>Email :</label>
+              <span id="profilEmail">-</span>
+            </div>
+            <div class="info-group">
+              <label>Téléphone :</label>
+              <span id="profilTelephone">-</span>
+            </div>
+            <div class="info-group">
+              <label>Localité :</label>
+              <span id="profilLocalite">-</span>
+            </div>
+            <div class="info-group">
+              <label>Date d'inscription :</label>
+              <span id="profilDateInscription">-</span>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-disconnect" id="deconnexionBtn">
+              Se déconnecter
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Visite de nos Régions. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/profil.js"></script>
+  </body>
+</html>

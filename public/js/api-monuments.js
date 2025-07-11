@@ -63,6 +63,7 @@ export async function rechercherMonuments(ville) {
             method: 'POST',
             body: query
         });
+console.log(response);
 
         const data = await response.json();
         return formaterResultats(data.elements);
@@ -92,6 +93,7 @@ export async function rechercherVilleEtMonuments(recherche) {
         // Recherche de la ville
         const villeResponse = await fetch(`https://geo.api.gouv.fr/communes?nom=${recherche}&fields=nom,code,departement&boost=population&limit=1`);
         const villeData = await villeResponse.json();
+        console.log(villeData);
 
         if (!villeData.length) {
             throw new Error('Ville non trouvée');
@@ -102,16 +104,20 @@ export async function rechercherVilleEtMonuments(recherche) {
         // Recherche des monuments
         const monumentsResponse = await fetch(`https://data.culture.gouv.fr/api/records/1.0/search/?dataset=liste-des-immeubles-proteges-au-titre-des-monuments-historiques&q=${ville.nom}&rows=20`);
         const monumentsData = await monumentsResponse.json();
+        // monumentsData.records.forEach(record => {
+        //     console.log(record.fields); // ← vois ici ce qui est vraiment dispo
+        // });
 
         return {
             ville: ville,
             monuments: monumentsData.records.map(record => ({
-                nom: record.fields.tico || 'Monument sans nom',
-                type: 'Monument historique',
-                adresse: record.fields.adrs || 'Adresse non spécifiée',
-                periode: record.fields.scle || 'Période non spécifiée',
-                protection: record.fields.ppro || 'Type de protection non spécifié'
-            }))
+            nom: record.fields["titre_editorial_de_la_notice"] ?? 'Monument sans nom',
+            type: record.fields["denomination_de_l_edifice"] ?? 'Monument historique',
+            adresse: record.fields["adresse_forme_editoriale"] ?? 'Adresse non spécifiée',
+            periode: record.fields["siecle_de_la_campagne_principale_de_construction"] ?? 'Période non spécifiée',
+            protection: record.fields["typologie_de_la_protection"] ?? 'Type de protection non spécifié'
+}))
+
         };
     } catch (error) {
         console.error('Erreur:', error);

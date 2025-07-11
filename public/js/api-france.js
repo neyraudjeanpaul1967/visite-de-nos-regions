@@ -3,6 +3,7 @@ export async function rechercherVilleEtMonuments(recherche) {
         // Recherche de la ville
         const villeResponse = await fetch(`https://geo.api.gouv.fr/communes?nom=${recherche}&fields=nom,code,codesPostaux,departement&boost=population&limit=1`);
         const villeData = await villeResponse.json();
+console.log(villeData);
 
         if (!villeData.length) {
             throw new Error('Ville non trouvée');

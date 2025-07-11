@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Commentaires - Visite de nos Régions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleC.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo Visite de nos Régions" />
+        <h1>
+          Visite de nos Régions — Explorez la France, de ses villages
+          pittoresques à ses lieux emblématiques.
+        </h1>
+      </div>
+      <nav>
+        <button class="burger" aria-label="Menu">&#9776;</button>
+        <ul>
+          <li><a href="./index.html">page d'accueil</a></li>
+          <li><a href="./login.html">inscription visiteurs</a></li>
+          <li><a href="./loginguide.html">inscription guides</a></li>
+          <li><a href="./event.html">commandes</a></li>
+          <li><a href="./commentaire.html" class="active">commentaires</a></li>
+          <li><a href="./profil.html">profil</a></li>
+          <li id="authButton">
+            <a href="#" class="auth-btn">Se connecter</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Statut de connexion -->
+      <div id="userStatus" class="user-status"></div>
+
+      <div class="form-container">
+        <h2>Laisser un commentaire</h2>
+
+        <!-- Section commentaires guides -->
+        <div class="comment-section">
+          <h3>Commentaires sur les guides</h3>
+
+          <div class="form-group">
+            <label for="guideSelect">Sélectionner un guide</label>
+            <select id="guideSelect" name="guideSelect" required>
+              <option value="">-- Choisir un guide --</option>
+              <option value="1">Guide Test 1</option>
+              <option value="2">Guide Test 2</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="commentaireGuide">Commentaire sur le guide</label>
+            <textarea
+              id="commentaireGuide"
+              name="commentaireGuide"
+              rows="3"
+              placeholder="Partagez votre expérience avec ce guide..."
+              required
+            ></textarea>
+            <button type="button" class="btn-primary" id="validerCommentGuide">
+              Envoyer le commentaire
+            </button>
+          </div>
+
+          <div class="form-group">
+            <label for="guideSelectNote">Sélectionner un guide à noter</label>
+            <select id="guideSelectNote" name="guideSelectNote" required>
+              <option value="">-- Choisir un guide --</option>
+              <option value="1">Guide Test 1</option>
+              <option value="2">Guide Test 2</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="noteGuide">Note du guide (1 à 5)</label>
+            <input
+              type="number"
+              id="noteGuide"
+              name="noteGuide"
+              min="1"
+              max="5"
+              placeholder="5"
+              required
+            />
+            <button type="button" class="btn-primary" id="validerNoteGuide">
+              Attribuer la note
+            </button>
+          </div>
+        </div>
+
+        <!-- Section commentaires monuments -->
+        <div class="comment-section">
+          <h3>Commentaires sur les monuments</h3>
+
+          <div class="form-group">
+            <label for="monumentSelect">Sélectionner un monument</label>
+            <select id="monumentSelect" name="monumentSelect" required>
+              <option value="">-- Choisir un monument --</option>
+              <option value="Tour Eiffel">Tour Eiffel</option>
+              <option value="Notre-Dame">Notre-Dame de Paris</option>
+              <option value="Arc de Triomphe">Arc de Triomphe</option>
+              <option value="Château de Versailles">
+                Château de Versailles
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="commentaireMonument">Commentaire sur le monument</label>
+            <textarea
+              id="commentaireMonument"
+              name="commentaireMonument"
+              rows="3"
+              placeholder="Partagez votre visite de ce monument..."
+              required
+            ></textarea>
+            <button
+              type="button"
+              class="btn-primary"
+              id="validerCommentMonument"
+            >
+              Envoyer le commentaire
+            </button>
+          </div>
+
+          <div class="form-group">
+            <label for="monumentSelectNote"
+              >Sélectionner un monument à noter</label
+            >
+            <select id="monumentSelectNote" name="monumentSelectNote" required>
+              <option value="">-- Choisir un monument --</option>
+              <option value="Tour Eiffel">Tour Eiffel</option>
+              <option value="Notre-Dame">Notre-Dame de Paris</option>
+              <option value="Arc de Triomphe">Arc de Triomphe</option>
+              <option value="Château de Versailles">
+                Château de Versailles
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="noteMonument">Note du monument (1 à 5)</label>
+            <input
+              type="number"
+              id="noteMonument"
+              name="noteMonument"
+              min="1"
+              max="5"
+              placeholder="5"
+              required
+            />
+            <button type="button" class="btn-primary" id="validerNoteMonument">
+              Attribuer la note
+            </button>
+          </div>
+        </div>
+
+        <!-- Section pour afficher les commentaires existants -->
+        <div id="commentairesExistants" class="commentaires-existants">
+          <!-- Les commentaires seront chargés ici par JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Visite de nos Régions. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/commentaire.js"></script>
+  </body>
+</html>
